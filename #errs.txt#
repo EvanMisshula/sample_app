@@ -1,0 +1,19 @@
+/home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/
+dsl.rb:7:in `instance_eval': 
+
+
+/home/evan_misshula/Documents/RubyProjects/sample_app/Gemfile:31: syntax error, unexpected keyword_end, expecting $end (SyntaxError)
+
+
+
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/dsl.rb:7:in `evaluate'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/definition.rb:17:in `build'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler.rb:136:in `definition'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/cli.rb:225:in `install'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/vendor/thor/task.rb:22:in `run'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/vendor/thor/invocation.rb:118:in `invoke_task'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/vendor/thor.rb:246:in `dispatch'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/lib/bundler/vendor/thor/base.rb:389:in `start'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/gems/bundler-1.0.12/bin/bundle:13:in `<top (required)>'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/bin/bundle:19:in `load'
+											  from /home/evan_misshula/.rvm/gems/ruby-1.9.2-p180/bin/bundle:19:in `<main>'
