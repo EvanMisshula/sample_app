@@ -45,4 +45,53 @@ describe UsersController do  #1
       response.should have_selector("h1>img",:class => "gravatar")
   end #11-
   end #5-
- end #1
+describe "Post 'create'" do #12
+
+    describe "failure" do #13
+
+
+      before(:each) do #14
+        @attr = { :name => "", :email => "", :password => "", :password_confirmation => "" }
+      end #14-
+
+      it "should not create a user" do # 15
+        lamda do
+          post :create, :user => @attr
+        end.should_not change(User, :count)
+      end #15-
+  
+      it "should have the right title" do #16
+        post :create, :user => @attr
+        response.should have_selector("title", :content =>"Sign up")
+      end #16-
+
+      it "it should render the 'new' page" do #17
+        post :create, :user => @attr
+        response.should have_template('new')
+      end #17-
+     end #13-
+     
+     describe "success" do  #18
+
+      before(:each) do #19
+        @attr = { :name => "New User", :email => "user@example.com", :password => "foobar", :password_confirmation => "foobar" }
+      end #19-
+
+      it "should create a user" do # 20
+        lamda do
+          post :create, :user => @attr
+        end.should change(User, :count).by(1)
+      end #20-
+
+      it "it should redirect to the user 'sho' page" do #21
+        post :create, :user => @attr
+        response.should redirect_to(user_path(assigns(:user)))
+      end #21-
+      it "should have a welcome message" do #22
+        post :create, :user => @attr
+        flash[:success].should =~ /welcome to the sample app/i
+      end #22-
+
+     end #18-
+    end #12-
+ end #1-
