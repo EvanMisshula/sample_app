@@ -92,6 +92,11 @@ describe "Post 'create'" do #12
         flash[:success].should =~ /welcome to the sample app/i
       end #22-
 
+      it "should sign the user in" do  #23
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end #23-
+
      end #18-
     end #12-
  end #1-

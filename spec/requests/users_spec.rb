@@ -36,4 +36,28 @@ describe "Users" do #1
       end #6-
    end #5- 
  end #2-
+ describe "sign in/out" do #7
+    describe "failure" do #8
+      it "should not sign a user in" do #9
+        visit signin_path
+        fill_in :email, :with =>""
+        fill_in :password, :with =>""
+        click_button
+        response.should have_selector("div.flash.error", :content =>"Invalid")
+    end #9-
+  end #8-
+
+  describe "success" do #10
+      it "should sign a user in and out" do #11
+        user = Factory(:user)
+        visit signin_path
+        fill_in :email, :with =>user.email
+        fill_in :password, :with =>user.password
+        click_button
+        controller.should be_signed_in
+        click_link "Sign out"
+        controller.should_not be_signed_in
+      end #11-
+ end #10 -
+
 end #1-
