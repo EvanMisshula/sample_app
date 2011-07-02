@@ -1,0 +1,82 @@
+...FFFFF
+
+Failures:
+
+  1) SessionsController POST 'create' invalid  signin should have the right title
+     Failure/Error: response.should have_selector("title", :content => "Sign in")
+       expected following output to contain a <title>Sign in</title> tag:
+       <!DOCTYPE html>
+       <html>
+       <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+       <title>Ruby on Rails Tutorial Sample App</title>
+       </head>
+       <body>
+           <div class="container">
+             <header><img alt="Sample App" class="round" src="/images/logo.png?1309238896"><a href="/"><img alt="Sample App" class="round" src="/images/logo.png?1309238896"></a>
+         <nav class="round"><ul>
+       <li><a href="/">Home</a></li>
+       
+             <li><a href="/help">Help</a></li>
+           </ul></nav></header><section class="round"><h1>Sign in</h1>
+       
+       <form accept-charset="UTF-8" action="/sessions" method="post">
+       <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#10003;"></div>
+         <div class="field">
+            <label for="session_email">Email</label><br><input id="session_email" name="session[email]" size="30" type="text">
+       </div>
+         <div class="field">
+            <label for="session_password">Password</label><br><input id="session_password" name="session[password]" size="30" type="text">
+       </div>
+         <div class="actions">
+            <input id="session_submit" name="commit" type="submit" value="Sign in"><br>
+       </div>
+       </form>
+       <p>New user? <a href="/signup">Sign up now!</a></p>
+       
+             </section><footer><nav class="round"><ul>
+       <li><a href="/about">About</a></li>
+             <li><a href="/contact">Contact</a></li>
+             <li><a href="http://news.railstutorial.org/">News</a></li>
+             <li><a href="http://www.railstutorial.org/">Rails Tutorial</a></li>
+           </ul></nav></footer>
+       </div>
+         </body>
+       </html>
+     # ./spec/controllers/sessions_controller_spec.rb:30:in `block (4 levels) in <top (required)>'
+
+  2) SessionsController POST 'create' invalid  signin should have a flash.now messagee
+     Failure/Error: flash.now[:error].should =~ /invalid/i
+       expected: /invalid/i
+            got: nil (using =~)
+     # ./spec/controllers/sessions_controller_spec.rb:34:in `block (4 levels) in <top (required)>'
+
+  3) SessionsController POST 'create' valid  signin should sign the user in
+     Failure/Error: controller.current_user.should == @user
+     ArgumentError:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./spec/controllers/sessions_controller_spec.rb:46:in `block (4 levels) in <top (required)>'
+
+  4) SessionsController POST 'create' valid  signin should redirect to the user show page
+     Failure/Error: response.should redirect_to(user_path(@user))
+       Expected block to return true value.
+     # ./spec/controllers/sessions_controller_spec.rb:52:in `block (4 levels) in <top (required)>'
+
+  5) SessionsController DELETE 'destroy' should sign a user out
+     Failure/Error: test_sign_in(Factory(:user))
+     NoMethodError:
+       undefined method `current_user=' for #<SessionsController:0xb8b26c0>
+     # ./app/helpers/sessions_helper.rb:4:in `sign_in'
+     # ./spec/controllers/sessions_controller_spec.rb:60:in `block (3 levels) in <top (required)>'
+
+Finished in 0.43039 seconds
+8 examples, 5 failures
+
+Failed examples:
+
+rspec ./spec/controllers/sessions_controller_spec.rb:28 # SessionsController POST 'create' invalid  signin should have the right title
+rspec ./spec/controllers/sessions_controller_spec.rb:32 # SessionsController POST 'create' invalid  signin should have a flash.now messagee
+rspec ./spec/controllers/sessions_controller_spec.rb:44 # SessionsController POST 'create' valid  signin should sign the user in
+rspec ./spec/controllers/sessions_controller_spec.rb:50 # SessionsController POST 'create' valid  signin should redirect to the user show page
+rspec ./spec/controllers/sessions_controller_spec.rb:59 # SessionsController DELETE 'destroy' should sign a user out

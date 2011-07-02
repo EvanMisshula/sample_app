@@ -46,9 +46,6 @@ a:visited {
 
 nav {
     float: right;
-}
-
-nav {
    background-color: white;
    padding: 0 0.7em;
    white-space: nowrap;
@@ -125,7 +122,7 @@ td.main {
 td.sidebar {
     width:  30%;
     padding: 1em;
-    verical-align: top;
+    vertical-align: top;
     background: #ffc;
 }
 
@@ -155,7 +152,7 @@ div.field, div.actions {
     width: 400px;
     border: 2px solid red;
     padding: 7px;
-    padding-bottom: 12 px;
+    padding-bottom: 12px;
     margin-bottom: 20px;
     background-color: #f0f0f0;
 }
@@ -179,4 +176,12 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+ul.users {
+  margin-top: 1em;
+}
+
+ul.users li {
+  list-style: none;
 }

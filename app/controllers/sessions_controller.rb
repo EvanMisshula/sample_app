@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to user
     end
+
   end
   def destroy
     sign_out

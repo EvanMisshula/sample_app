@@ -1,0 +1,69 @@
+FFFFFF
+
+Failures:
+
+  1) PagesController GET 'home' should be successful
+     Failure/Error: get 'home'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:7:in `block (3 levels) in <top (required)>'
+
+  2) PagesController GET 'home' should have the right title
+     Failure/Error: get 'home'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  3) PagesController GET 'contact' should be successful
+     Failure/Error: get 'contact'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:20:in `block (3 levels) in <top (required)>'
+
+  4) PagesController GET 'contact' should have the right title
+     Failure/Error: get 'contact'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:24:in `block (3 levels) in <top (required)>'
+
+  5) PagesController GET 'about' should be successful
+     Failure/Error: get 'about'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:33:in `block (3 levels) in <top (required)>'
+
+  6) PagesController GET 'about' should have the right title
+     Failure/Error: get 'about'
+     ActionView::Template::Error:
+       wrong number of arguments (0 for 1)
+     # ./app/helpers/sessions_helper.rb:6:in `current_user'
+     # ./app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__944589421_76135630_1019788846'
+     # ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__278560872_76281530_254761649'
+     # ./spec/controllers/pages_controller_spec.rb:38:in `block (3 levels) in <top (required)>'
+
+Finished in 0.19151 seconds
+6 examples, 6 failures
+
+Failed examples:
+
+rspec ./spec/controllers/pages_controller_spec.rb:6 # PagesController GET 'home' should be successful
+rspec ./spec/controllers/pages_controller_spec.rb:10 # PagesController GET 'home' should have the right title
+rspec ./spec/controllers/pages_controller_spec.rb:19 # PagesController GET 'contact' should be successful
+rspec ./spec/controllers/pages_controller_spec.rb:23 # PagesController GET 'contact' should have the right title
+rspec ./spec/controllers/pages_controller_spec.rb:32 # PagesController GET 'about' should be successful
+rspec ./spec/controllers/pages_controller_spec.rb:37 # PagesController GET 'about' should have the right title

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe SessionsController do #1
   render_views
+
   describe "GET 'new'" do #2
     it "should be successful" do #3
       get 'new'
@@ -15,30 +16,34 @@ describe SessionsController do #1
   end #2-
   
   describe "POST 'create'" do #5
-    describe "invalid  signin" do  #6
+
+    describe "failure" do  #6
 
       before(:each) do #7
-        @attr = { :email => "email@example.com", :password =>"invalid"}
+        @attr = { :email => "", :password =>""}
       end #7-
 
       it "should re-render the new page" do #8
         post :create, :session => @attr
         response.should render_template('new')
       end #8-
+
       it "should have the right title" do #9
         post :create, :session => @attr
         response.should have_selector("title", :content => "Sign in")
       end #9-
-      it "should have a flash.now messagee" do #10
+
+      it "should have a flash.now message" do #10
         post :create, :session => @attr
         flash.now[:error].should =~ /invalid/i
       end #10-
     end #6-
-    describe "valid  signin" do  #11
+
+    describe "success" do  #11
 
       before(:each) do #12
         @user = Factory(:user)
-        @attr = { :email => "email@example.com", :password =>"password"}
+        @attr = { :email => @user.email, :password =>@user.password }
       end #12-
       
       it "should sign the user in" do #13

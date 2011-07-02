@@ -37,12 +37,12 @@ describe UsersController do  #1
       end #9-
     it "should include the user's name" do #10
       get :show, :id => @user
-      response.should have_selector("h1",:content =>@user.name)
+      response.should have_selector('h1',:content =>@user.name)
       end #10-
 
     it "should have a profile image" do #11
       get :show, :id => @user
-      response.should have_selector("h1>img",:class => "gravatar")
+      response.should have_selector('h1>img',:class => "gravatar")
   end #11-
   end #5-
 describe "Post 'create'" do #12
@@ -55,7 +55,7 @@ describe "Post 'create'" do #12
       end #14-
 
       it "should not create a user" do # 15
-        lamda do
+        lambda do
           post :create, :user => @attr
         end.should_not change(User, :count)
       end #15-
@@ -67,7 +67,7 @@ describe "Post 'create'" do #12
 
       it "it should render the 'new' page" do #17
         post :create, :user => @attr
-        response.should have_template('new')
+        response.should render_template('new')
       end #17-
      end #13-
      
@@ -78,7 +78,7 @@ describe "Post 'create'" do #12
       end #19-
 
       it "should create a user" do # 20
-        lamda do
+        lambda do
           post :create, :user => @attr
         end.should change(User, :count).by(1)
       end #20-
